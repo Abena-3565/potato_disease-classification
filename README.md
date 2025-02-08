@@ -24,52 +24,27 @@ TensorFlow Lite (TFLite) (for mobile app deployment)
 Google Cloud/AWS (for cloud hosting)
 🚀 Installation & Setup
 1️⃣ Clone the Repository
-bash
-Copy
-Edit
 git clone https://github.com/Abena-3565/Potato_Disease-Classification.git
 cd Potato_Disease-Classification
 2️⃣ Create Virtual Environment (Optional but Recommended)
-bash
-Copy
-Edit
 python -m venv venv
 source venv/bin/activate  # For Mac/Linux
 venv\Scripts\activate  # For Windows
 3️⃣ Install Dependencies
-bash
-Copy
-Edit
 pip install -r requirements.txt
 4️⃣ Train the Model (Optional)
 If you want to retrain the model, run:
-
-bash
-Copy
-Edit
 python train.py
 This will save the model as potato_model.h5.
 
 📡 Deployment Options
 🌐 Web API (FastAPI)
 Run the API locally:
-
-bash
-Copy
-Edit
 uvicorn app:app --host 0.0.0.0 --port 8000
 Then send a test request:
-
-bash
-Copy
-Edit
 curl -X POST -F "file=@test_leaf.jpg" http://127.0.0.1:8000/predict/
 📱 Android App (TensorFlow Lite)
 Convert the model to TFLite format:
-
-bash
-Copy
-Edit
 tflite_convert --saved_model_dir=potato_model/ --output_file=potato_model.tflite
 Integrate it into an Android app using ML Kit.
 
@@ -79,9 +54,6 @@ AWS Lambda + API Gateway (serverless API)
 Firebase Hosting (for web app)
 📌 Example Usage
 Using Python
-python
-Copy
-Edit
 import tensorflow as tf
 from PIL import Image
 import numpy as np
